@@ -3,24 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Eternal Horizon</title>
+    <title>Eternal Horizon - For Bhai</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <div id="scene1" class="scene active">
-        <div class="glitch-container">
-            <p id="glitch-text"></p>
-            <button id="btn1" class="hidden" onclick="nextScene(2)">Continue →</button>
-        </div>
-    </div>
+    <div class="app-wrapper">
+        <div class="app-container">
 
-    <div id="scene2" class="scene">
-        <div class="letter">
-            <p class="fade-in">Bhai...</p>
-            <p class="fade-in">Kabhi kabhi lagta hai ke shayad mere liye sab kuch itna special ho gaya hai kyun ke ap ho 🥺</p>
-            <button class="hidden" onclick="nextScene(3)">Do you want to see my condition right now?</button>
-        </div>
+            <div id="scene1" class="scene active">
+                <div class="glitch-container">
+                    <div id="glitch-lines">
+                        </div>
+                    <button id="btn1" class="hidden-btn" onclick="nextScene(2)">Continue →</button>
+                </div>
+            </div>
+
+            <div id="scene2" class="scene">
+                <div class="letter-wrapper">
+                    <h2 class="letter-header">Dear Pyaray Bhai…</h2>
+                    
+                    <div class="letter-content">
+                        <p class="fade-line">Mughay yh to nhi pata ky kaisay bolna chahiya lakin... Ap is duniya ky sab sy achay walay bhai hain, sab sy pyaray walay 🥺</p>
+                        
+                        <p class="fade-line">Duniya ki sab sy best wali feeling apko bhai bolna hai... 💫</p>
+                        
+                        <p class="fade-line">Ap jaise jaise mere zindagi mein aaye, meri zindgi roshan hoti ja rahi hai. Apke bina sab kuch adhoora sa lagta hai 🥺</p>
+                        
+                        <p class="fade-line">Kabhi kabhi bas chup chaap apki yaadon mein khud ko dhundhti hoon, aur lagta hai ke ap mere liye sirf ek bhai nahi, balki meri duniya ho 💕</p>
+                        
+                        <p class="fade-line">Bas yeh socha ke apko bata du… ke ap mere liye sab kuch ho, mera sab kuch, meri duniya, meri zindagi, mera sab kuch… 💖</p>
+                        
+                        <div class="letter-footer">
+                            <p class="love-note">I love you Tayyab Bhai 💫</p>
+                            <p class="signature">Regards,<br><span>Apki pyari sy bhen ❤️</span></p>
+                        </div>
+                    </div>
+
+                    <button id="btn2" class="hidden-btn" onclick="nextScene(3)">Do you want to see my condition right now? 💔</button>
+                </div>
+            </div>
+
+            </div>
     </div>
 
     <script src="script.js"></script>
