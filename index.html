@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eternal Horizon</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="scene1" class="scene active">
+        <div class="glitch-container">
+            <p id="glitch-text"></p>
+            <button id="btn1" class="hidden" onclick="nextScene(2)">Continue →</button>
+        </div>
+    </div>
+
+    <div id="scene2" class="scene">
+        <div class="letter">
+            <p class="fade-in">Bhai...</p>
+            <p class="fade-in">Kabhi kabhi lagta hai ke shayad mere liye sab kuch itna special ho gaya hai kyun ke ap ho 🥺</p>
+            <button class="hidden" onclick="nextScene(3)">Do you want to see my condition right now?</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
