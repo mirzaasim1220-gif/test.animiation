@@ -1,0 +1,43 @@
+body {
+    background-color: #0a0a0a; /* Dark for the intro */
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    overflow: hidden;
+}
+
+.scene {
+    display: none; /* Hide all scenes by default */
+    height: 100vh;
+    width: 100vw;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.active {
+    display: flex; /* Only show the active scene */
+}
+
+/* Soft Glow for Letter Scene */
+#scene2 {
+    background: radial-gradient(circle, #fff5f5 0%, #ffe4e1 100%);
+    color: #4a4a4a;
+}
+
+/* The Glitch Effect */
+.glitch-container {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.5rem;
+    text-shadow: 2px 0 red, -2px 0 blue;
+}
+
+.hidden {
+    opacity: 0;
+    transition: opacity 2s ease-in;
+}
+
+.show-btn {
+    opacity: 1 !important;
+}
