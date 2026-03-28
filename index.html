@@ -3,28 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Eternal Horizon - For Bhai</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Eternal Horizon | For Bhai</title>
+    
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <div class="app-wrapper">
         <div class="app-container">
-
+            
             <div id="scene1" class="scene active">
-                <div class="glitch-container">
+                <div class="glitch-wrapper">
                     <div id="glitch-lines">
                         </div>
                     <button id="btn1" class="hidden-btn" onclick="nextScene(2)">Continue →</button>
                 </div>
             </div>
 
-            <div id="scene2" class="scene">
-                <div class="letter-wrapper">
+            <div id="scene2" class="scene" style="display: none;">
+                <div class="letter-content">
                     <h2 class="letter-header">Dear Pyaray Bhai…</h2>
                     
-                    <div class="letter-content">
+                    <div class="scroll-area">
                         <p class="fade-line">Mughay yh to nhi pata ky kaisay bolna chahiya lakin... Ap is duniya ky sab sy achay walay bhai hain, sab sy pyaray walay 🥺</p>
                         
                         <p class="fade-line">Duniya ki sab sy best wali feeling apko bhai bolna hai... 💫</p>
@@ -35,13 +36,13 @@
                         
                         <p class="fade-line">Bas yeh socha ke apko bata du… ke ap mere liye sab kuch ho, mera sab kuch, meri duniya, meri zindagi, mera sab kuch… 💖</p>
                         
-                        <div class="letter-footer">
+                        <div class="letter-footer" style="opacity: 0;">
                             <p class="love-note">I love you Tayyab Bhai 💫</p>
                             <p class="signature">Regards,<br><span>Apki pyari sy bhen ❤️</span></p>
                         </div>
                     </div>
 
-                    <button id="btn2" class="hidden-btn" onclick="nextScene(3)">Do you want to see my condition right now? 💔</button>
+                    <button id="btn2" class="hidden-btn" onclick="nextScene(3)">Do you want to see my condition? 💔</button>
                 </div>
             </div>
 
