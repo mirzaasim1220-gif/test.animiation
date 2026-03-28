@@ -1,3 +1,4 @@
+// 1. Scene 1 Configuration (The Glitch System)
 const glitchData = [
     { text: "Error detected...", delay: 1500 },
     { text: "Missing component...", delay: 1500 },
@@ -5,50 +6,90 @@ const glitchData = [
     { text: "Match found: Tayyab Bhai 😪😔", delay: 1000 }
 ];
 
-function runGlitch() {
+// 2. Main Logic to run on page load
+window.onload = () => {
+    runGlitchSequence();
+};
+
+function runGlitchSequence() {
     const container = document.getElementById('glitch-lines');
-    let currentTime = 0;
+    let cumulativeDelay = 0;
 
     glitchData.forEach((item, index) => {
         setTimeout(() => {
             const p = document.createElement('p');
             p.innerText = item.text;
-            container.appendChild(p);
+            
+            // Add red glow if it's the match found line
+            if (item.text.includes("Match found")) {
+                p.style.color = "#ff3e3e";
+                p.style.textShadow = "0 0 15px rgba(255, 62, 62, 0.8)";
+                p.style.fontWeight = "bold";
+            }
 
-            // Agar last line hai, toh button dikhao
+            container.appendChild(p);
+            
+            // Subtle flickering entry
+            p.style.opacity = "1";
+
+            // If it's the last line, show the button after a short pause
             if (index === glitchData.length - 1) {
                 setTimeout(() => {
-                    document.getElementById('btn1').classList.add('show-btn');
+                    const btn = document.getElementById('btn1');
+                    btn.classList.add('show-btn');
+                    btn.style.opacity = "1";
                 }, 1500);
             }
-        }, currentTime);
-        currentTime += item.delay;
+        }, cumulativeDelay);
+        
+        cumulativeDelay += item.delay;
     });
 }
 
-function nextScene(num) {
-    // Purane scene se active class hatao
-    document.querySelectorAll('.scene').forEach(s => s.classList.remove('active'));
-    
-    // Naye scene par active class lagao
-    const next = document.getElementById('scene' + num);
-    next.classList.add('active');
+// 3. Scene Switcher Function
+function nextScene(sceneNumber) {
+    // Select all scenes and hide them
+    const allScenes = document.querySelectorAll('.scene');
+    allScenes.forEach(scene => {
+        scene.classList.remove('active');
+        scene.style.display = 'none';
+    });
 
-    // Agar Scene 2 hai, toh lines ko fade-in karo
-    if (num === 2) {
-        const lines = next.querySelectorAll('.fade-line');
-        lines.forEach((line, i) => {
-            setTimeout(() => {
-                line.style.opacity = "1";
-            }, i * 2000); // Har line 2 second baad aayegi
-        });
+    // Show the targeted scene
+    const targetScene = document.getElementById('scene' + sceneNumber);
+    targetScene.classList.add('active');
+    targetScene.style.display = 'flex';
 
-        // Letter ka button last mein dikhao
-        setTimeout(() => {
-            document.getElementById('btn2').classList.add('show-btn');
-        }, lines.length * 2000 + 1000);
+    // Special logic for Scene 2 (The Letter)
+    if (sceneNumber === 2) {
+        animateLetter();
     }
 }
 
-// Start the sequence
-window.onload = runGlitch;
+// 4. Letter Animation Logic
+function animateLetter() {
+    const lines = document.querySelectorAll('.fade-line');
+    const footer = document.querySelector('.letter-footer');
+    const nextBtn = document.getElementById('btn2');
+
+    lines.forEach((line, index) => {
+        setTimeout(() => {
+            line.style.opacity = "1";
+            line.style.transform = "translateY(0)";
+            line.style.transition = "all 1.5s ease";
+        }, index * 2500); // 2.5 seconds gap between lines for reading
+    });
+
+    // Show the footer and button after all lines appear
+    const totalTime = lines.length * 2500;
+    
+    setTimeout(() => {
+        footer.style.opacity = "1";
+        footer.style.transition = "opacity 2s ease";
+    }, totalTime);
+
+    setTimeout(() => {
+        nextBtn.classList.add('show-btn');
+        nextBtn.style.opacity = "1";
+    }, totalTime + 2000);
+}
