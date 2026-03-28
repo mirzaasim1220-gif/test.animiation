@@ -2,53 +2,67 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Eternal Horizon | For Bhai</title>
-    
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <title>Glitchy Love System</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <div class="app-wrapper">
-        <div class="app-container">
-            
-            <div id="scene1" class="scene active">
-                <div class="glitch-wrapper">
-                    <div id="glitch-lines">
-                        </div>
-                    <button id="btn1" class="hidden-btn" onclick="nextScene(2)">Continue →</button>
-                </div>
-            </div>
+<!-- 1️⃣ Glitch Intro -->
+<div id="scene1" class="scene active">
+    <p class="line">Error detected...</p>
+    <p class="line">Missing component...</p>
+    <p class="line">Searching...</p>
+    <p class="line highlight">Match found: Tayya 😪😔</p>
+    <button onclick="nextScene(2)">Continue →</button>
+</div>
 
-            <div id="scene2" class="scene" style="display: none;">
-                <div class="letter-content">
-                    <h2 class="letter-header">Dear Pyaray Bhai…</h2>
-                    
-                    <div class="scroll-area">
-                        <p class="fade-line">Mughay yh to nhi pata ky kaisay bolna chahiya lakin... Ap is duniya ky sab sy achay walay bhai hain, sab sy pyaray walay 🥺</p>
-                        
-                        <p class="fade-line">Duniya ki sab sy best wali feeling apko bhai bolna hai... 💫</p>
-                        
-                        <p class="fade-line">Ap jaise jaise mere zindagi mein aaye, meri zindgi roshan hoti ja rahi hai. Apke bina sab kuch adhoora sa lagta hai 🥺</p>
-                        
-                        <p class="fade-line">Kabhi kabhi bas chup chaap apki yaadon mein khud ko dhundhti hoon, aur lagta hai ke ap mere liye sirf ek bhai nahi, balki meri duniya ho 💕</p>
-                        
-                        <p class="fade-line">Bas yeh socha ke apko bata du… ke ap mere liye sab kuch ho, mera sab kuch, meri duniya, meri zindagi, mera sab kuch… 💖</p>
-                        
-                        <div class="letter-footer" style="opacity: 0;">
-                            <p class="love-note">I love you Tayyab Bhai 💫</p>
-                            <p class="signature">Regards,<br><span>Apki pyari sy bhen ❤️</span></p>
-                        </div>
-                    </div>
+<!-- 2️⃣ Letter -->
+<div id="scene2" class="scene">
+    <p>Bhai…<br><br>
+    Kabhi kabhi lagta hai ke shayad mere liye sab kuch itna special ho gaya hai kyun ke ap ho 🥺<br><br>
 
-                    <button id="btn2" class="hidden-btn" onclick="nextScene(3)">Do you want to see my condition? 💔</button>
-                </div>
-            </div>
+    Har choti choti baat—apke messages, apki hasi—sab mere din ko roshan kar deti hain 💫<br><br>
 
-            </div>
-    </div>
+    Ap meri zindagi ka ek bohot bada hissa ban gaye ho...<br>
+    Apke bina sab kuch adhoora lagta hai 🥺<br><br>
 
-    <script src="script.js"></script>
+    I love you Tayyab Bhai 💫<br><br>
+
+    Regards,<br>
+    Apki pyari sy bhen ❤️</p>
+
+    <button onclick="nextScene(3)">Do you want to see my condition right now?</button>
+</div>
+
+<!-- 3️⃣ Lonely -->
+<div id="scene3" class="scene">
+    <h2>Me without you</h2>
+    <p>Sab kuch adhoora lagta hai… 🥺</p>
+    <button onclick="nextScene(4)">Do you want to see more?</button>
+</div>
+
+<!-- 4️⃣ Tree -->
+<div id="scene4" class="scene">
+    <p>Kuch missing lag raha hai… 💫</p>
+    <button onclick="nextScene(5)">Wait… want to see more?</button>
+</div>
+
+<!-- 5️⃣ Garden -->
+<div id="scene5" class="scene">
+    <p>Shayad… aise bhi ho sakta hai 💕</p>
+    <button onclick="nextScene(6)">Click here 💫</button>
+</div>
+
+<!-- 6️⃣ Final -->
+<div id="scene6" class="scene">
+    <p>
+    Agar apko yeh dekhna hai…<br><br>
+    To aa jao na Bhai 💖<br><br>
+    I’m happiest only with you 🥰
+    </p>
+    <button>Reply?</button>
+</div>
+
+<script src="script.js"></script>
 </body>
 </html>
