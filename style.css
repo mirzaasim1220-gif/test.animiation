@@ -1,43 +1,50 @@
-body {
-    background-color: #0a0a0a; /* Dark for the intro */
-    color: white;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    margin: 0;
-    overflow: hidden;
-}
-
-.scene {
-    display: none; /* Hide all scenes by default */
-    height: 100vh;
-    width: 100vw;
+/* The background of the whole page */
+.app-wrapper {
+    display: flex;
     justify-content: center;
     align-items: center;
+    height: 100vh;
+    background: #121212; /* Deep dark background to make the box pop */
+    background-image: radial-gradient(circle at center, #1a1a1a 0%, #000000 100%);
+}
+
+/* The "Box" where the story lives */
+.app-container {
+    width: 90%;
+    max-width: 500px; /* Perfect mobile/tablet width */
+    height: 700px;
+    background: rgba(255, 255, 255, 0.05); /* Slight transparency */
+    backdrop-filter: blur(15px); /* Blurs the background behind the box */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 30px;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+    overflow: hidden; /* Keeps petals and animations inside the box */
+    position: relative;
+    display: flex;
+    transition: all 1s ease-in-out;
+}
+
+/* Make sure scenes fill the box perfectly */
+.scene {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 40px;
+    display: none;
     flex-direction: column;
-    text-align: center;
+    justify-content: center;
+    align-items: center;
 }
 
 .active {
-    display: flex; /* Only show the active scene */
+    display: flex;
 }
 
-/* Soft Glow for Letter Scene */
-#scene2 {
-    background: radial-gradient(circle, #fff5f5 0%, #ffe4e1 100%);
-    color: #4a4a4a;
-}
-
-/* The Glitch Effect */
-.glitch-container {
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 1.5rem;
-    text-shadow: 2px 0 red, -2px 0 blue;
-}
-
-.hidden {
-    opacity: 0;
-    transition: opacity 2s ease-in;
-}
-
-.show-btn {
-    opacity: 1 !important;
+/* Aesthetic adjustments for the "Match Found" text */
+#glitch-text p {
+    margin: 10px 0;
+    font-size: 1.1rem;
+    color: #00ff41; /* Classic Matrix/System Green */
 }
